@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GymFlow — Gym Operating System</title>
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Roboto, "Segoe UI", Arial; margin:0; color:#111; background:#f7fafc; }
+    .hero { max-width:900px; margin:48px auto; padding:32px; background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.06); text-align:center;}
+    .logo { width:120px; height:120px; object-fit:contain; border-radius:12px; }
+    h1 { margin:16px 0 8px; font-size:28px; }
+    p.lead { color:#444; margin:0 0 20px; }
+    .grid { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
+    .card { background:#f8fafc; padding:12px 16px; border-radius:8px; min-width:160px; }
+    footer { margin-top:26px; color:#666; font-size:13px; }
+    a.btn { display:inline-block; margin-top:12px; padding:10px 18px; background:#0f172a; color:#fff; border-radius:8px; text-decoration:none;}
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <!-- Use the image URL below as the logo source -->
+    <img class="logo" src="/mnt/data/A_digital_user_interface_screenshot_of_a_fitness_a.png" alt="GymFlow Logo" />
+    <h1>GymFlow</h1>
+    <p class="lead">GymFlow — Gym Operating System for local gyms. Attendance, payments, member management, and Arena features in one place.</p>
+
+    <div class="grid">
+      <div class="card"><strong>Contact</strong><div>hello@gymflow.app</div></div>
+      <div class="card"><strong>Phone</strong><div>+91 98765 43210</div></div>
+      <div class="card"><strong>Service</strong><div>Gym management & member engagement</div></div>
+    </div>
+
+    <a class="btn" href="mailto:hello@gymflow.app">Contact Us</a>
+
+    <footer>
+      <div>© <span id="year"></span> GymFlow — Built for small & mid-size gyms</div>
+    </footer>
+  </main>
+
+  <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
+</body>
+</html>
