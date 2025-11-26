@@ -5,40 +5,497 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>IronSaathi — Gym Operating System</title>
   <style>
-    body { font-family: Inter, system-ui, -apple-system, Roboto, "Segoe UI", Arial; margin:0; color:#111; background:#f7fafc; }
-    .hero { max-width:900px; margin:48px auto; padding:32px; background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.06); text-align:center;}
-    .logo { width:120px; height:120px; object-fit:contain; border-radius:12px; }
-    h1 { margin:16px 0 8px; font-size:28px; }
-    p.lead { color:#444; margin:0 0 20px; }
-    .grid { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
-    .card { background:#f8fafc; padding:12px 16px; border-radius:8px; min-width:160px; }
-    footer { margin-top:26px; color:#666; font-size:13px; }
-    a.btn { display:inline-block; margin-top:12px; padding:10px 18px; background:#0f172a; color:#fff; border-radius:8px; text-decoration:none;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      font-family: Inter, system-ui, -apple-system, Roboto, "Segoe UI", Arial, sans-serif; 
+      color: #111; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      padding: 24px 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0f172a;
+      text-decoration: none;
+    }
+    
+    .logo-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #667eea;
+    }
+    
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 0 60px;
+      color: white;
+    }
+    
+    .hero-logo {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      margin: 0 auto 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      letter-spacing: -0.5px;
+    }
+    
+    .hero .tagline {
+      font-size: 22px;
+      margin-bottom: 12px;
+      opacity: 0.95;
+      font-weight: 500;
+    }
+    
+    .hero .subtitle {
+      font-size: 18px;
+      margin-bottom: 40px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: #667eea;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    /* Features Section */
+    .features {
+      background: white;
+      border-radius: 24px 24px 0 0;
+      padding: 80px 0;
+      margin-top: 60px;
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      color: #64748b;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    
+    .feature-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s;
+      text-align: center;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+      border-color: #667eea;
+    }
+    
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    
+    .feature-card p {
+      color: #64748b;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      padding: 60px 0;
+      border-top: 1px solid #e2e8f0;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    
+    .contact-card {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border-color: #667eea;
+    }
+    
+    .contact-card strong {
+      display: block;
+      font-size: 16px;
+      color: #0f172a;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .contact-card div {
+      color: #64748b;
+      font-size: 15px;
+    }
+    
+    .contact-card a {
+      color: #667eea;
+      text-decoration: none;
+    }
+    
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .footer-copyright {
+      font-size: 14px;
+      color: #64748b;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero .tagline {
+        font-size: 20px;
+      }
+      
+      .hero .subtitle {
+        font-size: 16px;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+    }
   </style>
 </head>
 <body>
-  <main class="hero">
-    <!-- Use the image URL below as the logo source -->
-    <img class="logo" 
-     src="https://babasingh123.github.io/ChatGPT%20Image%20Nov%2023%2C%202025%2C%2009_24_16%20PM.png"
-     alt="IronSaathi Logo" />
-
-    <h1>IronSaathi</h1>
-    <p class="lead">IronSaathi — Gym Operating System for local gyms. Attendance, payments, member management, and Arena features in one place.</p>
-
-    <div class="grid">
-      <div class="card"><strong>Contact</strong><div>firexavinash1@gmail.com</div></div>
-      <div class="card"><strong>Phone</strong><div>+91 9502426844</div></div>
-      <div class="card"><strong>Service</strong><div>Gym management & member engagement</div></div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo-header">
+          <img src="https://babasingh123.github.io/ChatGPT%20Image%20Nov%2023%2C%202025%2C%2009_24_16%20PM.png" alt="IronSaathi Logo" />
+          <span>IronSaathi</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <a class="btn" href="mailto:firexavinash1@gmail.com">Contact Us</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <img class="hero-logo" 
+           src="https://babasingh123.github.io/ChatGPT%20Image%20Nov%2023%2C%202025%2C%2009_24_16%20PM.png"
+           alt="IronSaathi Logo" />
+      
+      <h1>IronSaathi</h1>
+      <p class="tagline">Gym Operating System</p>
+      <p class="subtitle">Complete gym management solution for local gyms. Manage attendance, payments, members, and engage your community—all in one powerful platform.</p>
+      
+      <div class="cta-buttons">
+        <a href="mailto:firexavinash1@gmail.com" class="btn btn-primary">Get Started</a>
+        <a href="#features" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <div>© <span id="year"></span> IronSaathi — Built for small & mid-size gyms</div>
-    </footer>
-  </main>
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section-title">Everything You Need to Run Your Gym</h2>
+      <p class="section-subtitle">Powerful features designed for small and mid-size gyms to streamline operations and boost member engagement</p>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Member Management</h3>
+          <p>Complete member database with profiles, membership plans, and history. Easy registration and member tracking.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>QR Code Attendance</h3>
+          <p>Quick and contactless check-ins using QR code scanning. Track attendance in real-time with detailed reports.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3>Payment Tracking</h3>
+          <p>Record and manage payments manually. Track dues, renewals, and payment history for all members.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Multi-Channel Messaging</h3>
+          <p>Send notifications via WhatsApp, SMS, or in-app messages. Automated reminders and personalized communication.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Dynamic Branding</h3>
+          <p>Each gym gets its own branded app experience with custom logos, colors, and themes. No generic branding.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💪</div>
+          <h3>Workout Plans</h3>
+          <p>AI-powered workout plan generation. Create personalized fitness routines for members with exercise database.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Analytics & Reports</h3>
+          <p>Comprehensive dashboards with attendance stats, revenue tracking, member insights, and performance metrics.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Member Engagement</h3>
+          <p>Leaderboards, achievements, and gamification features to keep members motivated and engaged.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Have questions? We're here to help you transform your gym operations.</p>
+      
+      <div class="contact-grid">
+        <div class="contact-card">
+          <strong>📧 Email</strong>
+          <div><a href="mailto:firexavinash1@gmail.com">firexavinash1@gmail.com</a></div>
+        </div>
+        
+        <div class="contact-card">
+          <strong>📱 Phone</strong>
+          <div><a href="tel:+919502426844">+91 9502426844</a></div>
+        </div>
+        
+        <div class="contact-card">
+          <strong>🏋️ Service</strong>
+          <div>Gym management & member engagement</div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="mailto:firexavinash1@gmail.com" class="btn btn-primary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-copyright">
+          © <span id="year"></span> IronSaathi — Built for small & mid-size gyms
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
