@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us — IronSaathi</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo-header">
+          <img src="https://babasingh123.github.io/ChatGPT%20Image%20Nov%2023%2C%202025%2C%2009_24_16%20PM.png" alt="IronSaathi Logo" />
+          <span>IronSaathi</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/contact.html" class="btn-nav">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 100px;">
+    <div class="container" style="max-width: 1000px;">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">Have questions? We're here to help you transform your gym operations.</p>
+      
+      <div class="grid grid-2" style="gap: 60px; align-items: start;">
+        <!-- Contact Form -->
+        <div>
+          <div class="card" style="padding: 40px;">
+            <h3 style="font-size: 24px; margin-bottom: 24px; color: var(--text-dark);">Send us a Message</h3>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+              
+              <div class="form-group">
+                <label for="gym">Gym Name</label>
+                <input type="text" id="gym" name="gym">
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="pricing">Pricing Information</option>
+                  <option value="demo">Request a Demo</option>
+                  <option value="support">Technical Support</option>
+                  <option value="partnership">Partnership Opportunity</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+            
+            <div id="formMessage" style="margin-top: 20px; padding: 16px; border-radius: 8px; display: none;"></div>
+          </div>
+        </div>
+        
+        <!-- Contact Information -->
+        <div>
+          <div class="card" style="padding: 40px; margin-bottom: 24px;">
+            <h3 style="font-size: 24px; margin-bottom: 24px; color: var(--text-dark);">Contact Information</h3>
+            
+            <div style="margin-bottom: 32px;">
+              <div style="display: flex; align-items: start; gap: 16px; margin-bottom: 24px;">
+                <div style="font-size: 32px;">📧</div>
+                <div>
+                  <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Email</h4>
+                  <a href="mailto:firexavinash1@gmail.com" style="color: var(--primary); text-decoration: none;">firexavinash1@gmail.com</a>
+                </div>
+              </div>
+              
+              <div style="display: flex; align-items: start; gap: 16px; margin-bottom: 24px;">
+                <div style="font-size: 32px;">📱</div>
+                <div>
+                  <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Phone</h4>
+                  <a href="tel:+919502426844" style="color: var(--primary); text-decoration: none;">+91 9502426844</a>
+                </div>
+              </div>
+              
+              <div style="display: flex; align-items: start; gap: 16px;">
+                <div style="font-size: 32px;">🌐</div>
+                <div>
+                  <h4 style="font-size: 18px; margin-bottom: 8px; color: var(--text-dark);">Website</h4>
+                  <a href="https://ironsaathi.com" style="color: var(--primary); text-decoration: none;">ironsaathi.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card" style="padding: 40px;">
+            <h3 style="font-size: 24px; margin-bottom: 24px; color: var(--text-dark);">Business Hours</h3>
+            <div style="color: var(--text-gray); line-height: 1.8;">
+              <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM IST</p>
+              <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM IST</p>
+              <p><strong>Sunday:</strong> Closed</p>
+              <p style="margin-top: 20px; font-size: 14px; color: var(--text-light);">
+                We typically respond to inquiries within 24 hours during business days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>IronSaathi</h3>
+          <p style="color:var(--text-light);margin-top:12px;font-size:14px;">Complete gym management system for small and mid-size gyms.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:firexavinash1@gmail.com">firexavinash1@gmail.com</a></li>
+            <li><a href="tel:+919502426844">+91 9502426844</a></li>
+            <li><a href="/contact.html">Contact Form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-of-service.html">Terms of Service</a>
+        </div>
+        <div>© <span id="year"></span> IronSaathi. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    function handleSubmit(event) {
+      event.preventDefault();
+      
+      const form = event.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Create mailto link
+      const subject = encodeURIComponent(data.subject || 'Contact Form Submission');
+      const body = encodeURIComponent(
+        `Name: ${data.name}\n` +
+        `Email: ${data.email}\n` +
+        `Phone: ${data.phone || 'Not provided'}\n` +
+        `Gym: ${data.gym || 'Not provided'}\n\n` +
+        `Message:\n${data.message}`
+      );
+      
+      const mailtoLink = `mailto:firexavinash1@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Show success message
+      const messageDiv = document.getElementById('formMessage');
+      messageDiv.style.display = 'block';
+      messageDiv.style.background = '#d1fae5';
+      messageDiv.style.color = '#065f46';
+      messageDiv.style.border = '1px solid #10b981';
+      messageDiv.innerHTML = '✓ Thank you! Opening your email client to send the message...';
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Reset form after a delay
+      setTimeout(() => {
+        form.reset();
+        messageDiv.style.display = 'none';
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
+

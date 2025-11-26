@@ -4,25 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Terms of Service — IronSaathi</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    body { font-family: Inter, system-ui, -apple-system, Roboto, "Segoe UI", Arial; margin:0; color:#111; background:#f7fafc; line-height:1.6; }
-    .container { max-width:800px; margin:48px auto; padding:32px; background:#fff; border-radius:12px; box-shadow:0 6px 20px rgba(0,0,0,0.06); }
-    h1 { margin:0 0 8px; font-size:32px; color:#0f172a; }
-    .meta { color:#666; font-size:14px; margin-bottom:32px; padding-bottom:16px; border-bottom:1px solid #e2e8f0; }
-    h2 { margin:32px 0 16px; font-size:24px; color:#1e293b; }
-    h3 { margin:24px 0 12px; font-size:18px; color:#334155; }
-    p { margin:12px 0; color:#475569; }
-    ul, ol { margin:12px 0; padding-left:24px; color:#475569; }
-    li { margin:8px 0; }
-    a { color:#0f172a; text-decoration:underline; }
-    .back-link { display:inline-block; margin-bottom:24px; color:#0f172a; text-decoration:none; font-weight:500; }
-    .back-link:hover { text-decoration:underline; }
-    footer { margin-top:48px; padding-top:24px; border-top:1px solid #e2e8f0; color:#666; font-size:13px; text-align:center; }
+    .content-container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .meta { color: var(--text-gray); font-size: 14px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    h1 { margin: 0 0 8px; font-size: 32px; color: var(--text-dark); }
+    h2 { margin: 32px 0 16px; font-size: 24px; color: var(--text-dark); }
+    h3 { margin: 24px 0 12px; font-size: 18px; color: var(--text-dark); }
+    p { margin: 12px 0; color: var(--text-gray); }
+    ul, ol { margin: 12px 0; padding-left: 24px; color: var(--text-gray); }
+    li { margin: 8px 0; }
+    a { color: var(--primary); text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="/" class="back-link">← Back to Home</a>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo-header">
+          <img src="https://babasingh123.github.io/ChatGPT%20Image%20Nov%2023%2C%202025%2C%2009_24_16%20PM.png" alt="IronSaathi Logo" />
+          <span>IronSaathi</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/how-it-works.html">How It Works</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/contact.html" class="btn-nav">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 40px;">
+    <div class="content-container">
     
     <h1>Terms of Service</h1>
     <div class="meta">
@@ -163,10 +179,51 @@
       <li><strong>Website:</strong> <a href="https://ironsaathi.com">https://ironsaathi.com</a></li>
     </ul>
 
-    <footer>
-      <div>© <span id="year"></span> IronSaathi. All rights reserved.</div>
-    </footer>
-  </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>IronSaathi</h3>
+          <p style="color:var(--text-light);margin-top:12px;font-size:14px;">Complete gym management system for small and mid-size gyms.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/#features">Features</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:firexavinash1@gmail.com">firexavinash1@gmail.com</a></li>
+            <li><a href="tel:+919502426844">+91 9502426844</a></li>
+            <li><a href="/contact.html">Contact Form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-of-service.html">Terms of Service</a>
+        </div>
+        <div>© <span id="year"></span> IronSaathi. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const today = new Date();
